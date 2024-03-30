@@ -1,0 +1,62 @@
+<style>
+.upsell_item {
+	display: flex;
+	justify-content: flex-start;
+}
+div.page-width:has(> div.upsell_products-popup) {
+	position: fixed;
+    bottom: 2%;
+    left: -1%;
+    z-index: 9999;   
+}
+.left-image_section {
+    min-width: 150px;
+    min-height: auto;
+    display: block !important;
+}
+div.animate--slide-from-left {
+	animation: slideFromLeft !important;
+	animation-duration: 2.5s !important;
+	animation-iteration-count: 1 !important;
+	animation-timing-function: ease-in !important;
+	animation-direction: normal !important;
+}
+div.animate--slide-from-right {
+	animation: slideFromRight !important;
+	animation-duration: 2.5s !important;
+	animation-iteration-count: 1 !important;
+	animation-timing-function: ease-out !important;
+	animation-direction: normal !important;
+}
+div.upsell_item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+span.close-upsell_popup {
+    float: right;
+    top: 0;
+    padding: 0px 10px;
+    background-color: #ffff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
+    border-radius: 50px;
+    margin-left: -15px;
+    margin-top: -13px;
+    cursor: pointer;
+}
+@keyframes slideFromLeft {
+  0%   {left: -50%; bottom: 2%;}
+  100%  {left: -1%; bottom: 2%;}
+}
+@keyframes slideFromRight {
+  from {
+    margin-left: -1%;
+  }
+  to {
+    margin-left: -50%;
+  }
+}
+</style>
+<div class="upsell-popup_main">
+<div class="upsell_items"></div>
+</div>
