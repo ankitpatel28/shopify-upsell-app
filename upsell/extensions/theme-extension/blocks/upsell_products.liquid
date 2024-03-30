@@ -1,0 +1,23 @@
+{% render 'upsell_pop' %}
+{% assign moneySymbol = 0 | money %}
+{% assign moneySymbol = moneySymbol | remove: "0.00" | trim %}
+<script>
+  window.upsellParam = {
+    proId: '{{ product.id }}',
+    money: '{{ moneySymbol }}'
+  }
+</script>
+<script src="{{ 'upsellPopupApi.js' | asset_url }}" defer></script>
+{% schema %}
+{
+  "name": "Upsell Popup",
+  "class": "upsell_products-popup",
+  "target": "section",
+  "settings": [],
+  "enabled_on": {
+    "templates": ["product"],
+    "groups": ["footer"]
+  }
+}
+{% endschema %}
+
